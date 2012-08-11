@@ -38,8 +38,26 @@ $(document).ready(function(){
 
     $("#search-box").css({'margin-left': $("#search-box").position().left, 'float':'left'});
     $("#search-box").animate({ "margin-top": "0px", "margin-left": "0px" }, 2000);
+    $("#map").slideDown(2000);
+    $("#slider-code").slideDown(2000);
+    $("#weather").slideDown(2000);
     $("body").css('background', 'none');
     initialize();
+
+    //display weather condition
+    $("#weather").html();
+    var deptDateSplit = departure.split('-');
+    var deptStringDate = new Date(Number(deptDateSplit[2]), Number(deptDateSplit[0])-1, Number(deptDateSplit[1]));
+    var arrivalDateSplit = arrival.split('-');
+    var arrivalStringDate = new Date(Number(arrivalDateSplit[2]), Number(arrivalDateSplit[0])-1, Number(arrivalDateSplit[1]));
+    var weatherForDate = new Date(deptStringDate.getTime() + (24 * 60 * 60 * 1000));
+
+    displayWeather(departure);
+    while(weatherForDate.getTime() <= arrivalStringDate.getTime()) {
+      displayWeather(weatherForDate.getMonth()+1 + "-" + weatherForDate.getDate() + "-" + weatherForDate.getFullYear());
+      weatherForDate = new Date(weatherForDate.getTime() + (24 * 60 * 60 * 1000));
+    }
+
     return false;
   });
 
@@ -93,4 +111,51 @@ $(document).ready(function(){
   });
 
   }
+
+  //weather report data
+  function displayWeather(forDate) {
+    var todaysDate = new Date();
+    var currentMonth = todaysDate.getMonth()+1;
+    var dateSplit = forDate.split('-');
+    var stringDate = new Date(Number(dateSplit[2]), Number(dateSplit[0])-1, Number(dateSplit[1]));
+
+    if(Number(dateSplit[0]) > currentMonth+1) {
+      $("#weather").html("Oops!! Weather condition is available only for current month and next month.");
+    } else {
+      if(Number(departure.split('-')[0]) == currentMonth) {
+        urlFinal = "http://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20html%20WHERE%20url='http://in.weather.com/weather/monthly-Bangalore-INXX0012'%20AND%20xpath='/html/body//div[@class=\"monthly_item\"]'&format=json"
+      } else {
+        urlFinal = "http://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20html%20WHERE%20url='http://in.weather.com/weather/monthly-Bangalore-INXX0012?flag=1'%20AND%20xpath='/html/body//div[@class=\"monthly_item\"]'&format=json"
+      }
+      $.ajax({
+        type: 'GET',
+        url: urlFinal,
+        dataType: 'json',
+        success: function(data, textStatus) {
+          $.each(data.query.results.div, function(key1, value1) {
+            if($.isArray(value1.div)) {
+              if(Number(value1.div[0].p) == Number(dateSplit[1])) {
+                $("#weather").append('<strong>' + stringDate.toDateString() + '</strong><br />');
+                if(value1.div[1].class == "monthly_item_title") {
+                  $("#weather").append(value1.div[1].p + " data<br />");
+                  if(typeof value1.div[2].p != "undefined") {
+                    $("#weather").append(value1.div[2].p.content + "<br /><hr />");
+                  } else if(typeof value1.div[2].strong != "undefined") {
+                    $("#weather").append(value1.div[2].strong.content + "<br /><hr />");
+                  }
+                } else if(value1.div[1].class == "monthly_item_title_forecast"){
+                  $("#weather").append("Forecast data<br />");
+                  $("#weather").append("<img src=" + value1.div[2].a.img.src + " />");
+                  $("#weather").append(value1.div[3].strong.content + "<br />");
+                  $("#weather").append(value1.div[4].p + "<br /><hr />");
+                }
+              }
+            }
+          });
+        }
+      });
+    }
+
+  }
+
 });
