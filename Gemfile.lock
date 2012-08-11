@@ -75,6 +75,7 @@ GEM
       webrobots (~> 0.0, >= 0.0.9)
     mime-types (1.19)
     multi_json (1.3.6)
+
     multi_xml (0.5.1)
     net-http-digest_auth (1.2.1)
     net-http-persistent (2.7)
@@ -140,6 +141,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   less-rails-bootstrap
+  nokogiri
   mechanize
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
