@@ -13,19 +13,22 @@
  *= require twitter/bootstrap
  */
 
-body { 
-	min-width: 1170px; 
+body {
+	min-width: 1170px;
 }
 
-.container {
-	width: 960px;
+.trippy-container {
+  width: 100%;
 }
 
+#search-box {
+  width: 540px;
+  margin: 200px auto 0;
+  margin-top: 200px;
+}
 .search-wrapper{
   height: 280px;
   width: 540px;
-  margin-top: 200px;
-  left: 380px;
   position: absolute;
   background-color: #000000;
   border: 2px solid #000000;
@@ -36,13 +39,10 @@ body {
 }
 
 .text-fields-wrapper{
-  margin-top: 200px;
   text-align:center;
   position: relative;
-  left: 220px;
   z-index: 10;
   width: 544px;
-  margin-left: -10px;
 }
 
 .from-box {
@@ -87,15 +87,36 @@ body {
 }
 
 /* tabs css */
-#slider-code { height: 145px; overflow:hidden; }
-#slider-code .viewport { float: left; width: 240px; height: 125px; overflow: hidden; position: relative; }
-#slider-code .buttons { display: block; margin: 30px 10px 0 0; float: left; }
-#slider-code .next { margin: 30px 0 0 10px;  }
+#slider-code { height: 350px; overflow:hidden; width: 950px; margin: 40px auto; }
+#slider-code .viewport { float: left; width: 830px; height: 320px; overflow: hidden; position: relative; }
+#slider-code .buttons { font-size: 0px; text-indent: -1000px; width: 48px; height: 48px; display: block; margin: 30px 10px 0 0; float: left; }
+#slider-code .prev { background: url(/left.png) 0 0 no-repeat; }
+#slider-code .next { background: url(/right.png) 0 0 no-repeat;  margin: 30px 0 0 10px;  }
 #slider-code .disable { visibility: hidden; }
 #slider-code .overview { list-style: none; padding: 0; margin: 0;  position: absolute; left: 0; top: 0; }
-#slider-code .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}
+#slider-code .overview li{ float: left; margin: 20px 20px 0 0; padding: 1px; height: 316px; border: 1px solid #dcdcdc; width: 826px;}
 
 #slider-code .pager { overflow:hidden; list-style: none; clear: both; margin: 0 0 0 45px; }
-#slider-code .pager li { float: left; }
+#slider-code .pager li { float: left; min-width: 150px; margin: 0 25px; }
+#slider-code .pager li:first-child { margin-left: 0px; }
+#slider-code .pager li:last-child { margin-right: 0px; }
+#slider-code ul.pager { border-bottom: 1px dashed #DDDDDD; }
+#slider-code ul { margin: 0!important; padding: 0;  }
 #slider-code .pagenum { background-color: #fff; text-decoration: none; text-align: center; padding: 5px; color: #555555; font-size: 14px; font-weight: bold; display: block; }
 #slider-code .active { color: #fff; background-color:  #555555; }
+
+/* google maps styling */
+#directions-panel {
+  height: 100%;
+  float: right;
+  width: 390px;
+  overflow: auto;
+}
+
+#map {
+  width: 550px;
+  height: 300px;
+  float: right;
+}
+
+/* weather styling */
