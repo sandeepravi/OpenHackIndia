@@ -12,3 +12,33 @@
  *= require_tree .
  *= require twitter/bootstrap
  */
+
+body { 
+	min-width: 1170px; 
+}
+
+.container {
+	width: 960px;
+}
+
+.search-wrapper{
+  margin: auto;
+  height: 140px;
+  width: 500px;
+  margin-top: 282px;
+  padding: 20px;
+  background-color: #000000;
+  border: 2px solid #000000;
+  opacity: 0.6;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+  border-radius: 15px;
+}
+
+.text-fields-wrapper{
+  margin: 45px 0 0 0;
+  text-align:center;
+}
+
+.from-box {
+  margin-right: 30px;
+}
