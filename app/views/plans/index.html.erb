@@ -1,28 +1,45 @@
-<div class="search-wrapper">
-</div>
-<div class="text-fields-wrapper">
-  <h3 class="from-place"><span>From: </span>Bangalore</h3>
-  <h3>Where do you wanna go?</h3>
-  <input type="text" class="from-box location" placeholder="Location Name"/>
-  <h3>When?</h3>
-  <input type="text" class="from-box" placeholder="Departure MM-DD-YYYY"/>
-  <input type="text" placeholder="Arrival MM-DD-YYYY"/>
-  <br />
-  <input type="button" class="btn btn-info" value="Stay? Travel? places around?" />
+<div id="search-box">
+  <div class="search-wrapper">
+  </div>
+  <div class="text-fields-wrapper">
+    <h3 class="from-place"><span>From: </span>Bangalore</h3>
+    <h3>Where do you wanna go?</h3>
+    <form id="search-form" action="#">
+      <input name="toplace" type="text" class="from-box location" placeholder="Location Name"/>
+      <h3>When?</h3>
+      <input name="departure" type="text" class="from-box" placeholder="Departure MM-DD-YYYY"/>
+      <input name="arrival" type="text" placeholder="Arrival MM-DD-YYYY"/>
+      <br />
+      <input type="submit" class="btn btn-info" value="Stay? Travel? places around?" />
+    </form>
+  </div>
 </div>
 
+<div id="weather"></div>
+
+<div id="map">
+  <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+  <div id="directions-panel" style="float:right;width:30%;height 100%"></div>
+</div>
+
+<div style="clear:both"></div>
+
 <div id="slider-code">
-    <ul class="pager">
-        <li><a rel="0" class="pagenum" href="#">1</a></li>
-        <li><a rel="1" class="pagenum" href="#">2</a></li>
-        <li><a rel="2" class="pagenum" href="#">3</a></li>
+    <ul class="pager nav nav-tabs">
+        <li><a rel="0" class="pagenum" href="#">Hotels</a></li>
+        <li><a rel="1" class="pagenum" href="#">Travel by Bus</a></li>
+        <li><a rel="2" class="pagenum" href="#">Travel by Flight</a></li>
+        <li><a rel="3" class="pagenum" href="#">Places to Visit</a></li>
+        <li><a rel="4" class="pagenum" href="#">Restaurants</a></li>
     </ul>
     <a href="#" class="buttons prev">left</a>
     <div class="viewport">
         <ul class="overview">
-            <li>tab one</li>
-            <li>tab two</li>
-            <li>tab three</li>                            
+            <li id="hotels">tab one</li>
+            <li id="buses">tab two</li>
+            <li id="flights">tab three</li>
+            <li id="places">tab four</li>
+            <li id="restaurants">tab five</li>
         </ul>
     </div>
     <a href="#" class="buttons next">right</a>
