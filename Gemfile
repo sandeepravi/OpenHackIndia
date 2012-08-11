@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 #gem 'sqlite3'
 gem 'less-rails-bootstrap'
+gem 'mechanize'
 
 
 # Gems used only for assets and not required
