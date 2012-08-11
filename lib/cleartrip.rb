@@ -1,4 +1,4 @@
-module ClearTrip
+module Cleartrip
   class << self
 
     require 'uri'
