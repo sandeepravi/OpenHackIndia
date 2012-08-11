@@ -58,6 +58,7 @@ $(document).ready(function(){
       weatherForDate = new Date(weatherForDate.getTime() + (24 * 60 * 60 * 1000));
     }
 
+    get_hotels();
     return false;
   });
 
@@ -65,6 +66,15 @@ $(document).ready(function(){
   var directionDisplay;
   var directionsService = new google.maps.DirectionsService();
   var bangalore = new google.maps.LatLng(12.9833, 77.5833);
+
+  function get_hotels(){
+    var place = $("input[name='toplace']").val()
+    $.ajax({
+      url: "/plan/hotels",
+      dataType: "script",
+      data: {place: place}
+    });
+  }
 
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
