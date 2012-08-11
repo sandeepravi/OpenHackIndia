@@ -40,6 +40,7 @@ $(document).ready(function(){
     $("#search-box").animate({ "margin-top": "0px", "margin-left": "0px" }, 2000);
     $("body").css('background', 'none');
     initialize();
+    get_hotels();
     return false;
   });
 
@@ -47,6 +48,15 @@ $(document).ready(function(){
   var directionDisplay;
   var directionsService = new google.maps.DirectionsService();
   var bangalore = new google.maps.LatLng(12.9833, 77.5833);
+
+  function get_hotels(){
+    var place = $("input[name='toplace']").val()
+    $.ajax({
+      url: "/plan/hotels",
+      dataType: "script",
+      data: {place: place}
+    });
+  }
 
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();

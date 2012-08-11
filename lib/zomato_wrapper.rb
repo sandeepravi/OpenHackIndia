@@ -1,16 +1,16 @@
 module ZomatoWrapper
   class << self
-    def get_city(city)
-      zomato = initialize_zomato
-      search(zomato.cities, city)
-    end
-
     def restaurants(city)
       city = get_city(city)
       Zomato::Restaurant.search(city.id, "").restaurants
     end
 
     private 
+
+    def get_city(city)
+      zomato = initialize_zomato
+      search(zomato.cities, city)
+    end
 
     def initialize_zomato
       Zomato::Base.new(ZOMATO_KEY)
