@@ -8,9 +8,11 @@ class PlansController < ApplicationController
     @hotels = TripAdvisor.hotels_search(params[:place])
   end
 
-  def places_of_interest
-    
-    @places_of_interest = TripAdvisor.search_places_of_interest(lat_long)
+  def interests
+    geo = []
+    lat_long = Geocoder.coordinates(param[:place])
+    geo_location = lat_long.each {|u| geo << '%.2f' % u} if lat_long.present?
+    @places_of_interest = TripAdvisor.search_places_of_interest(geo_location.join(","))
   end
 
   def buses

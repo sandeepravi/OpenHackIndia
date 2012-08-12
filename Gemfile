@@ -11,8 +11,9 @@ gem 'mechanize'
 gem 'zomato'
 gem 'geocoder'
 gem 'rb-readline'
-gem 'pry'
-# Gems used only for assets and not required
+
+gem 'thin'
+
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
