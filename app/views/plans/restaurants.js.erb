@@ -1,3 +1,4 @@
+$("#restaurants").html("")
 <% @restaurants.each do |res| %>
   $("#restaurants").append("<div class='boxes'><label>Name:</label><span><%= raw res.name %></span><label>Address:</label><span><%= res.address %></span><label>Locality:</label><span><%=res.locality%></span><label>Cuisines:</label><span><%= res.cuisines %></span></div>");
 <% end %>

@@ -1,3 +1,5 @@
+$("#dep").html("");
+$("#arr").html("");
 <% @dep_flights.each do |flight| %>
   $("#dep").append("<div class='boxes'><label>Airlines:</label><span><%= flight[:name] %></span><label>Date:</label><span><%= flight[:date]%></span><label>Time:</label><span><%=flight[:time]%></span><label>Cost:</label><span><%= flight[:cost] %></span></div>");
 <% end %>
