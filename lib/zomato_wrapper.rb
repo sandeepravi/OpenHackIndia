@@ -2,6 +2,7 @@ module ZomatoWrapper
   class << self
     def restaurants(city)
       city = get_city(city)
+      return [] if city.class == [].class
       Zomato::Restaurant.search(city.id, "").restaurants
     end
 
@@ -18,7 +19,7 @@ module ZomatoWrapper
 
     def search(cities, city)
       cities.each do |c|
-        return c if c.name.match /#{city}/i
+        return c if c.name.match(/#{city}/)
       end
     end
   end

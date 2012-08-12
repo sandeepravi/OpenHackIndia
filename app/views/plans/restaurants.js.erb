@@ -1,0 +1,3 @@
+<% @restaurants.each do |res| %>
+  $("#restaurants").append("<div><ul><li><%= raw res.name %></li><li><%= res.address %></li><li><%=res.locality%></li><li><%= res.cuisines %></li></ul></div>");
+<% end %>
