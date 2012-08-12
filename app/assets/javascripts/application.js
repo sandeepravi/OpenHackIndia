@@ -41,6 +41,7 @@ $(document).ready(function(){
     $("body").css('background', 'none');
     initialize();
     get_hotels();
+    get_restaurants();
     return false;
   });
 
@@ -57,7 +58,15 @@ $(document).ready(function(){
       data: {place: place}
     });
   }
+  function get_restaurants(){
+    var place = $("input[name='toplace']").val();
+     $.ajax({
+      url: "/plan/restaurants",
+      dataType: "script",
+      data: {place: place}
+    });
 
+}
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
@@ -103,4 +112,5 @@ $(document).ready(function(){
   });
 
   }
+
 });
