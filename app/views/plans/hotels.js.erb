@@ -1,3 +1,4 @@
+$("#hotels").html("");
 <% @hotels.each do |hotel| %>
   $("#hotels").append("<div class='boxes'><label>Name:</label><span><%= raw hotel['name'].split(',')[0] %></span></div>");
 <% end %>

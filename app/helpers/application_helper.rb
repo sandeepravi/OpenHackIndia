@@ -1,6 +1,6 @@
 module ApplicationHelper
 
   def random_bg
-    BACKGROUNDS.sample
+    BACKGROUNDS[rand(BACKGROUNDS.count)]
   end
 end
