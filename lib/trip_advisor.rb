@@ -24,11 +24,12 @@ module TripAdvisor
           interest_areas = client.search_venues(:ll => lat_long,:limit => 50, :radius => 3000, :section => "outdoors")
           
           arr = []
-          hash_arr = {}	
+          
           if interest_areas.present?
-            if interest_areas.first[1].blank?
+            if interest_areas.first[1].present?
               interest_areas.first[1].first["items"].each do |u|
-              	hash_arr["distance"] = u.location.distance if u.location.present
+                hash_arr = {}
+              	hash_arr["distance"] = u.location.present? ? u.location.distance : nil 
                 hash_arr["name"] = u.categories[0].present? ? u.categories[0]["name"] : nil
                 hash_arr["tag"] =   u.categories[0].present? ? u.categories[0]["parents"] : nil
                 arr << hash_arr
