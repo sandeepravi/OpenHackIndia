@@ -63,6 +63,7 @@ $(".date").text(departure);
     get_hotels();
     get_restaurants();
     get_flights();
+    get_buses();
     return false;
   });
 
@@ -72,6 +73,7 @@ $(".date").text(departure);
   var bangalore = new google.maps.LatLng(12.9833, 77.5833);
 
   function get_hotels(){
+  $("#hotels").html("");
     var place = $("input[name='toplace']").val()
     $.ajax({
       url: "/plan/hotels",
@@ -80,14 +82,22 @@ $(".date").text(departure);
     });
   }
   function get_restaurants(){
+  $("#restaurants").html("");
     var place = $("input[name='toplace']").val();
      $.ajax({
       url: "/plan/restaurants",
       dataType: "script",
       data: {place: place, dep: departure, arr: arrival}
     });
-
 }
+
+  function get_buses(){
+     $.ajax({
+      url: "/plan/buses",
+      dataType: "script"
+    });
+}
+
   function get_flights(){
     var place = $("input[name='toplace']").val();
      $.ajax({
@@ -95,7 +105,6 @@ $(".date").text(departure);
       dataType: "script",
       data: {place: place, dep: departure, arr: arrival}
     });
-
 }
 
   function initialize() {

@@ -6,4 +6,5 @@ Trippy::Application.routes.draw do
   match 'plan/restaurants' => "plans#restaurants"
   match 'plan/flights' => "plans#flights"
   match 'plan/interests' => "plans#interests"
+  match 'plan/buses' => "plans#buses"
 end
