@@ -99,7 +99,7 @@ $(document).ready(function(){
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
-      zoom: 7,
+      zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       center: bangalore
     };
