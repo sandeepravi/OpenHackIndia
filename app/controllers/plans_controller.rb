@@ -8,6 +8,11 @@ class PlansController < ApplicationController
     @hotels = TripAdvisor.hotels_search(params[:place])
   end
 
+  def places_of_interest
+    
+    @places_of_interest = TripAdvisor.search_places_of_interest(lat_long)
+  end
+
   def buses
     @buses
   end
