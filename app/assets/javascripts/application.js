@@ -62,6 +62,7 @@ $(".date").text(departure);
 
     get_hotels();
     get_restaurants();
+    get_places();
     get_flights();
     get_buses();
     return false;
@@ -89,7 +90,17 @@ $(".date").text(departure);
       dataType: "script",
       data: {place: place, dep: departure, arr: arrival}
     });
-}
+  }
+
+  function get_places(){
+  $("#places").html("");
+    var place = $("input[name='toplace']").val();
+     $.ajax({
+      url: "/plan/interests",
+      dataType: "script",
+      data: {place: place, dep: departure, arr: arrival}
+    });
+  }
 
   function get_buses(){
      $.ajax({
