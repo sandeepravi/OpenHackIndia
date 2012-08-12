@@ -44,7 +44,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-
     faraday (0.8.1)
       multipart-post (~> 1.1)
     faraday_middleware (0.8.8)
@@ -53,10 +52,8 @@ GEM
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
       hashie (~> 1.0)
-    hashie (1.2.0)
-
     geocoder (1.1.2)
-
+    hashie (1.2.0)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
@@ -161,19 +158,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-<<<<<<< HEAD
   foursquare2
-=======
   geocoder
->>>>>>> 3fd99801cb5fb087786024e4a4b2ce62159210a9
   jquery-rails
   less-rails-bootstrap
   mechanize
   nokogiri
-<<<<<<< HEAD
-=======
   pry
->>>>>>> 3fd99801cb5fb087786024e4a4b2ce62159210a9
   rails (= 3.2.8)
   rb-readline
   sass-rails (~> 3.2.3)

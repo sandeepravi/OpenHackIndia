@@ -32,11 +32,29 @@
       <%= render "visits" %>
       <%= render "restaurants" %>
     </ul>
+    <!-- If you have come here and found that we have hardcoded the values
+    for redbus, congratulations. You have a very deep understanding of APIs.     
+    Also, update the counter below showing the time you spent reading this 
+    COMMENT_TIME_COUNTER = 20 minutes
+    -->
     <a href="#" class="buttons prev">left</a>
     <div class="viewport">
         <ul class="overview">
             <li id="hotels"></li>
-            <li id="buses">tab two</li>
+            <li id="buses">
+            <% (rand(3) + 8).times do %>
+              <div class="boxes">
+                <label>Travels:</label>
+                <span><%= BUSES[rand(BUSES.count)] %></span>
+                <label>Date:</label>
+                <span class="date"></span>
+                <label>Time:</label>
+                <span>07:25 - 08:25</span>
+                <label>Cost:</label>
+                <span><%= rand(700) + 500 %></span>
+              </div>
+            <% end %>
+            </li>
             <li id="flights"><div id="dep"><h2>Departure</h2></div><div style="clear:both"></div><div id="arr"><h2>Arrival</h2></div></li>
             <li id="places">tab four</li>
             <li id="restaurants"></li>
