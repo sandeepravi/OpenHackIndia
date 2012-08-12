@@ -17,7 +17,9 @@ class PlansController < ApplicationController
   end
 
   def flights
-    @flights
+    #Replace date after adding date plugin
+    @dep_flights = Cleartrip.flights("Bangalore",params[:place],"17/08/2012")
+    @arr_flights = Cleartrip.flights(params[:place],"Bangalore","18/08/2012")
   end
 
   def visits

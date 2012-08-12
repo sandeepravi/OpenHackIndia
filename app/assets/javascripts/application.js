@@ -60,6 +60,7 @@ $(document).ready(function(){
 
     get_hotels();
     get_restaurants();
+    get_flights();
     return false;
   });
 
@@ -85,6 +86,16 @@ $(document).ready(function(){
     });
 
 }
+  function get_flights(){
+    var place = $("input[name='toplace']").val();
+     $.ajax({
+      url: "/plan/flights",
+      dataType: "script",
+      data: {place: place}
+    });
+
+}
+
   function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
