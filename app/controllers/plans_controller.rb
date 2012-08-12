@@ -15,9 +15,7 @@ class PlansController < ApplicationController
     @places_of_interest = TripAdvisor.search_places_of_interest(geo_location.join(","))
   end
 
-  def buses
-    @buses
-  end
+  def buses; end
 
   def restaurants
     @restaurants = ZomatoWrapper.restaurants(params[:place])

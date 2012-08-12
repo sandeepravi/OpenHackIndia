@@ -1,0 +1,12 @@
+<% (rand(3) + 8).times do %>
+  <div class="boxes">
+    <label>Travels:</label>
+    <span><%= BUSES[rand(BUSES.count)] %></span>
+    <label>Date:</label>
+    <span class="date"></span>
+    <label>Time:</label>
+    <span>07:25 - 08:25</span>
+    <label>Cost:</label>
+    <span><%= rand(700) + 500 %></span>
+  </div>
+<% end %>
