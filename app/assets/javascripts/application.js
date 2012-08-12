@@ -76,7 +76,7 @@ $(".date").text(departure);
     $.ajax({
       url: "/plan/hotels",
       dataType: "script",
-      data: {place: place}
+      data: {place: place, dep: departure, arr: arrival}
     });
   }
   function get_restaurants(){
@@ -84,7 +84,7 @@ $(".date").text(departure);
      $.ajax({
       url: "/plan/restaurants",
       dataType: "script",
-      data: {place: place}
+      data: {place: place, dep: departure, arr: arrival}
     });
 
 }
@@ -93,7 +93,7 @@ $(".date").text(departure);
      $.ajax({
       url: "/plan/flights",
       dataType: "script",
-      data: {place: place}
+      data: {place: place, dep: departure, arr: arrival}
     });
 
 }
