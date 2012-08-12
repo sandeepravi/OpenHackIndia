@@ -25,7 +25,8 @@ end
 
 gem 'jquery-rails'
 gem 'nokogiri'
-# To use ActiveModel has_secure_password
+gem 'xml-simple'# To use ActiveModel has_secure_password
+gem 'foursquare2'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
