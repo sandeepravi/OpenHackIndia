@@ -1,5 +1,6 @@
 <% @places_of_interest.each do |interest| %>
-<%= raise @places_of_interest.inspect %>
+
+
   $("#places").append("<div class='boxes'><label>Name:</label><span><%= raw interest['name'].split(',')[0] %></span>
   	<label>Distance:</label><span><%= raw interest['distance'].split(',')[0] %>"Miles"</span>
   	<label>Tag:</label><span><%= raw interest['tag'].split(',')[0] "%></span>
