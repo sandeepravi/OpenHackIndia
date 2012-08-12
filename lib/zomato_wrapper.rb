@@ -6,7 +6,7 @@ module ZomatoWrapper
       Zomato::Restaurant.search(city.id, "").restaurants
     end
 
-    private 
+    private
 
     def get_city(city)
       zomato = initialize_zomato
@@ -19,7 +19,7 @@ module ZomatoWrapper
 
     def search(cities, city)
       cities.each do |c|
-        return c if c.name.match(/#{city}/)
+        return c if c.name.match(/#{city}/i)
       end
     end
   end

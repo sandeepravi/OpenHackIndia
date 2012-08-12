@@ -1,8 +1,8 @@
 <% @places_of_interest.each do |interest| %>
 
-
-  $("#places").append("<div class='boxes'><label>Name:</label><span><%= raw interest['name'].split(',')[0] %></span>
-  	<label>Distance:</label><span><%= raw interest['distance'].split(',')[0] %>"Miles"</span>
-  	<label>Tag:</label><span><%= raw interest['tag'].split(',')[0] "%></span>
+  <% name = interest['name'].present? ? raw interest['name'].split(',')[0] : nil %>
+  $("#places").append("<div class='boxes'><label>Name:</label><span><%= name %></span>
+  	<label>Distance:</label><span><%= raw interest['distance'] %>"Miles"</span>
+  	<label>Tag:</label><span><%= raw interest['tag'].join(',') "%></span>
   	</div>");
 <% end %>

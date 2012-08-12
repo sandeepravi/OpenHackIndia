@@ -78,7 +78,7 @@ $(".date").text(departure);
     $.ajax({
       url: "/plan/hotels",
       dataType: "script",
-      data: {place: place}
+      data: {place: place, dep: departure, arr: arrival}
     });
   }
   function get_restaurants(){
@@ -87,7 +87,7 @@ $(".date").text(departure);
      $.ajax({
       url: "/plan/restaurants",
       dataType: "script",
-      data: {place: place}
+      data: {place: place, dep: departure, arr: arrival}
     });
 }
 
@@ -103,7 +103,7 @@ $(".date").text(departure);
      $.ajax({
       url: "/plan/flights",
       dataType: "script",
-      data: {place: place}
+      data: {place: place, dep: departure, arr: arrival}
     });
 }
 
@@ -111,8 +111,7 @@ $(".date").text(departure);
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
       zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: bangalore
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
