@@ -25,13 +25,14 @@ module TripAdvisor
           
           arr = []
           hash_arr = {}	
+          
           interest_areas.first[1].first["items"].each do |u|
           	hash_arr["distance"] = u.location.distance
             hash_arr["name"] = u.categories[0]["name"]
             hash_arr["tag"] = u.categories[0]["parents"]
             arr << hash_arr
           end	
-          hash_arr
+          arr
 	    end  	
 
     end

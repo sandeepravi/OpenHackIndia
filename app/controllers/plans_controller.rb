@@ -23,8 +23,10 @@ class PlansController < ApplicationController
 
   def flights
     #Replace date after adding date plugin
-    @dep_flights = Cleartrip.flights("Bangalore",params[:place],"17/08/2012")
-    @arr_flights = Cleartrip.flights(params[:place],"Bangalore","18/08/2012")
+    dep = Date.strptime(params[:dep],"%m-%d-%Y").strftime("%d/%m/%Y")
+    arr = Date.strptime(params[:arr],"%m-%d-%Y").strftime("%d/%m/%Y")
+    @dep_flights = Cleartrip.flights("Bangalore",params[:place],dep)
+    @arr_flights = Cleartrip.flights(params[:place],"Bangalore",arr)
   end
 
   def visits
