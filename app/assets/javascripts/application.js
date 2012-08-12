@@ -94,7 +94,8 @@ $(".date").text(departure);
   function get_buses(){
      $.ajax({
       url: "/plan/buses",
-      dataType: "script"
+      dataType: "script",
+      data: {place: place, dep: departure, arr: arrival}
     });
 }
 
