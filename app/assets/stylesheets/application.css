@@ -88,13 +88,13 @@ body {
 
 /* tabs css */
 #slider-code { display: none; height: 350px; overflow:hidden; width: 950px; margin: 40px auto; }
-#slider-code .viewport { float: left; width: 830px; height: 320px; overflow: hidden; position: relative; }
+#slider-code .viewport { float: left; width: 830px; height: 295px; overflow: hidden; position: relative; }
 #slider-code .buttons { font-size: 0px; text-indent: -1000px; width: 48px; height: 48px; display: block; margin: 30px 10px 0 0; float: left; }
 #slider-code .prev { background: url(/left.png) 0 0 no-repeat; }
 #slider-code .next { background: url(/right.png) 0 0 no-repeat;  margin: 30px 0 0 10px;  }
 #slider-code .disable { visibility: hidden; }
 #slider-code .overview { list-style: none; padding: 0; margin: 0;  position: absolute; left: 0; top: 0; }
-#slider-code .overview li{ float: left; margin: 20px 20px 0 0; padding: 1px; height: 316px; border: 1px solid #dcdcdc; width: 826px;}
+#slider-code .overview li{ float: left; margin: 20px 20px 0 0; padding: 1px; height: 270px; border: 1px solid #dcdcdc; width: 826px; overflow-y: scroll; }
 
 #slider-code .pager { overflow:hidden; list-style: none; clear: both; margin: 0 0 0 45px; }
 #slider-code .pager li { float: left; min-width: 150px; margin: 0 25px; }
@@ -126,6 +126,38 @@ body {
   padding: 20px;
   height: 230px;
   width: 200px;
-  overflow: scroll;
+  overflow-y: scroll;
   display: none;
+}
+
+/* tabs boxes style */
+.boxes {
+  width: 249px;
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #444444;
+  background: #cecece; /* Old browsers */
+  background: -moz-linear-gradient(top, #cecece 0%, #999999 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cecece), color-stop(100%,#999999)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #cecece 0%,#999999 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #cecece 0%,#999999 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #cecece 0%,#999999 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #cecece 0%,#999999 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#999999',GradientType=0 ); /* IE6-9 */
+}
+.boxes label {
+  width: 80px;
+  font-weight: bold;
+  float: left;
+  clear: left;
+}
+.boxes span {
+  clear: right;
+  float: left;
+  display: block;
+  width: 160px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
