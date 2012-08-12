@@ -38,6 +38,9 @@ $(document).ready(function(){
       }
     });
 $(".date").text(departure);
+    $("#search-box, .search-wrapper, .text-fields-wrapper").css('width', '250px');
+    $("#search-box").css('width', '250px');
+    $('#search-box input[type="text"]').css('width', '70px');
     $("#search-box").css({'margin-left': $("#search-box").position().left, 'float':'left'});
     $("#search-box").animate({ "margin-top": "0px", "margin-left": "0px" }, 2000);
     $("#map").slideDown(2000);

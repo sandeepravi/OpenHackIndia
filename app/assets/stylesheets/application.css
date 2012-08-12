@@ -88,7 +88,7 @@ body {
 }
 
 /* tabs css */
-#slider-code { display: none; height: 350px; overflow:hidden; width: 950px; margin: 40px auto; }
+#slider-code { display: none; height: 350px; overflow:hidden; width: 950px; margin: 40px; }
 #slider-code .viewport { float: left; width: 830px; height: 295px; overflow: hidden; position: relative; }
 #slider-code .buttons { font-size: 0px; text-indent: -1000px; width: 48px; height: 48px; display: block; margin: 30px 10px 0 0; float: left; }
 #slider-code .prev { background: url(/left.png) 0 0 no-repeat; }
@@ -117,7 +117,7 @@ body {
 #map {
   width: 550px;
   height: 280px;
-  float: right;
+  float: left;
   display: none;
 }
 
