@@ -7,8 +7,8 @@
     <form id="search-form" action="#">
       <input name="toplace" type="text" class="from-box location" placeholder="Location Name"/>
       <h3>When?</h3>
-      <input name="departure" type="text" class="from-box" placeholder="Departure MM-DD-YYYY"/>
-      <input name="arrival" type="text" placeholder="Arrival MM-DD-YYYY"/>
+      <input name="departure" type="text" class="from-box date-selector" placeholder="Departure MM-DD-YYYY"/>
+      <input name="arrival" type="text" class="date-selector" placeholder="Arrival MM-DD-YYYY"/>
       <br />
       <input type="submit" class="btn btn-info" value="Stay? Travel? places around?" />
     </form>
@@ -33,29 +33,18 @@
       <%= render "restaurants" %>
     </ul>
     <!-- If you have come here and found that we have hardcoded the values
-    for redbus, congratulations. You have a very deep understanding of APIs.     
-    Also, update the counter below showing the cumulative time people have spent reading this 
+    for redbus, congratulations. You have a very deep understanding of APIs.
+    Also, update the counter below showing the time you spent reading this
+    for redbus, congratulations. You have a very deep understanding of APIs.
+    Also, update the counter below showing the cumulative time people have spent reading this
     COMMENT_TIME_COUNTER = 20 minutes
     -->
     <a href="#" class="buttons prev">left</a>
     <div class="viewport">
         <ul class="overview">
             <li id="hotels"></li>
-            <li id="buses">
-            <% (rand(3) + 8).times do %>
-              <div class="boxes">
-                <label>Travels:</label>
-                <span><%= BUSES[rand(BUSES.count)] %></span>
-                <label>Date:</label>
-                <span class="date"></span>
-                <label>Time:</label>
-                <span>07:25 - 08:25</span>
-                <label>Cost:</label>
-                <span><%= rand(700) + 500 %></span>
-              </div>
-            <% end %>
-            </li>
-            <li id="flights"><div id="dep"><h2>Departure</h2></div><div style="clear:both"></div><div id="arr"><h2>Arrival</h2></div></li>
+            <li id="buses"><%= render "rerandomize_buses" %></li>
+            <li id="flights"><h2>Departure</h2><div id="dep"></div><div style="clear:both"></div><h2>Arrival</h2><div id="arr"></div></li>
             <li id="places">tab four</li>
             <li id="restaurants"></li>
         </ul>
