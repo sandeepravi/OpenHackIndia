@@ -11,7 +11,18 @@ module Cleartrip
         agent.user_agent = "Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5"
       }
       url = "http://www.cleartrip.com/m/flights/results?rnd_one=O&from=#{airport_code(from)}&to=#{airport_code(to)}&depart_date=#{date}&adults=1&childs=0&infants=0&mobile=true&class=Economy&carrier=&dep_time=0&airline_codes=ALL"
-      agent.get(url).search("//html/body/div")
+      flight_xml = agent.get(url).search(".//div[@class='item']")
+      flights = []
+      puts flight_xml.first.children
+      flight_xml.each do |f_xml|
+        flight = {}
+        flight[:name] = f_xml.children.children.first.text
+        flight[:time] = f_xml.children[3].children[1].children.first.text
+        flight[:date] = f_xml.children[5].children[5].attributes["value"].value
+        flight[:cost] = f_xml.children[5].children[21].children[1].children.last.text
+        flights << flight
+      end
+      flights
     end
 
     private

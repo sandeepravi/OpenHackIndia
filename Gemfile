@@ -9,8 +9,9 @@ gem 'rails', '3.2.8'
 gem 'less-rails-bootstrap'
 gem 'mechanize'
 gem 'zomato'
-
-
+gem 'geocoder'
+gem 'rb-readline'
+gem 'pry'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

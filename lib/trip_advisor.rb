@@ -15,11 +15,6 @@ module TripAdvisor
 	      resp = Net::HTTP.get_response(URI.parse(url))
 	      data = resp.body
 	      result = JSON.parse(data)
-
-	      if result.has_key? 'Error'
-		      raise "web service error"
-		   end
-		   return result
 	    end		
 
 	    def search_places_of_interest(lat_long,query=[], limit=20)

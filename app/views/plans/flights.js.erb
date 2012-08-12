@@ -1,0 +1,6 @@
+<% @dep_flights.each do |flight| %>
+  $("#dep").append("<div><ul><li><%= flight[:name] %></li><li><%= flight[:date]%></li><li><%=flight[:time]%></li><li><%= flight[:cost] %></li></ul></div>");
+<% end %>
+<% @arr_flights.each do |flight| %>
+  $("#arr").append("<div><ul><li><%= flight[:name] %></li><li><%= flight[:date]%></li><li><%=flight[:time]%></li><li><%= flight[:cost] %></li></ul></div>");
+<% end %>

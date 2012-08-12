@@ -1,0 +1,3 @@
+<% @hotels.each do |hotel| %>
+  $("#hotels").append("<div><%= raw hotel['name'] %></div>");
+<% end %>
