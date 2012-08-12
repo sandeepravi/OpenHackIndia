@@ -2,7 +2,7 @@
 
 
   $("#places").append("<div class='boxes'><label>Name:</label><span><%= raw interest['name'].split(',')[0] %></span>
-  	<label>Distance:</label><span><%= raw interest['distance'].split(',')[0] %>"Miles"</span>
-  	<label>Tag:</label><span><%= raw interest['tag'].split(',')[0] "%></span>
+  	<label>Distance:</label><span><%= raw interest['distance'] %>"Miles"</span>
+  	<label>Tag:</label><span><%= raw interest['tag'].join(',') "%></span>
   	</div>");
 <% end %>
