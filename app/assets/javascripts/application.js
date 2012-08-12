@@ -94,8 +94,7 @@ $(".date").text(departure);
   function get_buses(){
      $.ajax({
       url: "/plan/buses",
-      dataType: "script",
-      data: {place: place, dep: departure, arr: arrival}
+      dataType: "script"
     });
 }
 
@@ -112,8 +111,7 @@ $(".date").text(departure);
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
       zoom: 11,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: bangalore
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
